@@ -110,7 +110,3 @@ function colorValue(stripe) {
   console.log(wynik);
   document.getElementById('wynik').innerHTML = (wynik + " &#937"+"<p>Tolerancja: "+ tolerancja*100 +" %</p>");
 }
-
-function result() {
-
-}
