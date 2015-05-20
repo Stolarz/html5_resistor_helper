@@ -1,0 +1,15 @@
+.pasek{
+  width: 20px;
+  height: 100px;
+
+  display: inline-block;
+  margin: 0 10px;
+}
+.pasek:hover{
+  cursor: pointer;
+}
+#pasekCont{
+  margin: auto;
+  width: 500px;
+  text-align: center;
+}
