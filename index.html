@@ -5,11 +5,13 @@
   </head>
   <body>
     <div id="pasekCont">
-      <div class="pasek" id="pasek1" style="background-color: black;" onclick="changeColor(this)"></div>
-      <div class="pasek" id="pasek2" style="background-color: black;" onclick="changeColor(this)"></div>
-      <div class="pasek" id="pasek3" style="background-color: black;" onclick="changeColor(this)"></div>
-      <div class="pasek" id="pasek4" style="background-color: black;" onclick="changeColor(this)"></div>
-      <div class="pasek" id="pasek5" style="background-color: black;" onclick="changeColor(this)"></div>
+      <div class="pasek" id="pasek1" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <div class="pasek" id="pasek2" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <div class="pasek" id="pasek3" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <div class="pasek" id="pasek4" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <div class="pasek" id="pasek5" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <button onclick="result()">Oblicz</button>
+      <div id="wynik"></div>
     </div>
 
   </body>
