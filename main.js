@@ -52,9 +52,9 @@ function colorValue(stripe) {
   else if(stripe.style.backgroundColor=="white" && stripe.id!="pasek4" && stripe.id!="pasek5")
   stripe.setAttribute("data-value","9");
 
-  var pasek1Wynik = parseInt(pasek1.getAttribute("data-value"));
-  var pasek2Wynik = parseInt(pasek2.getAttribute("data-value"));
-  var pasek3Wynik = parseInt(pasek3.getAttribute("data-value"));
+  var pasek1Wynik = parseFloat(pasek1.getAttribute("data-value"));
+  var pasek2Wynik = parseFloat(pasek2.getAttribute("data-value"));
+  var pasek3Wynik = parseFloat(pasek3.getAttribute("data-value"));
   wynik = pasek1Wynik + pasek2Wynik + pasek3Wynik;
   console.log(wynik);
   document.getElementById('wynik').innerHTML = (wynik + " &#937");
