@@ -9,8 +9,9 @@
   cursor: pointer;
 }
 #pasekCont{
+  background-color: #F5F5DC;
   margin: auto;
-  width: 500px;
+  width: 300px;
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
