@@ -27,9 +27,20 @@
     </div>
 
     <div id="licznikCont" class="hidden">
-      <p>Podaj wartość rezystora:</p>
-      <input id="resValue" type="text" />
-      <p>&#937</p>
+      <p>Podaj wartość rezystora i mnożnik:</p>
+      <input id="resValue" type="number" min='1' max='999' maxlength='3' value='1'/>
+      <select id="mnoznik">
+        <option value="1">1&#937</option>
+        <option value="10">10&#937</option>
+        <option value="100">100&#937</option>
+        <option value="1000">1K&#937</option>
+        <option value="10000">10K&#937</option>
+        <option value="100000">100K&#937</option>
+        <option value="1000000">1M&#937</option>
+        <option value="10000000">10M&#937</option>
+        <option value="0.1">0.1&#937</option>
+        <option value="0.01">0.01&#937</option>
+      </select>
       <br />
       <p>Podaj tolerancję:</p>
       <select name="tolerance" id="resTolerance">

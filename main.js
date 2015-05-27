@@ -83,8 +83,14 @@ function colorValue(stripe) {
 }
 
 function liczRezystancje() {
-  var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey'];
+  if(document.getElementById('resValue').value>999)
+  alert('Maxymalna liczba wynosi 999. Wprowadź poprawki');
+  else {
+
+  var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey','white','black','orange','yellow'];
   var stripe5valuetab = ['5','10','1','2','0.5','0.25','0.1','0.05'];
+  var stripe4valuetab = ['0.1','0.01','10','100','100000','1000000','10000000','','','1','1000','10000'];
+  var stripe123valuetab = ['1','2','5','6','7','8','9','0','3','4']
   var pasek1 = document.getElementById('pasek21');
   var pasek2 = document.getElementById('pasek22');
   var pasek3 = document.getElementById('pasek23');
@@ -93,13 +99,37 @@ function liczRezystancje() {
 
   var wartoscRezystora = document.getElementById('resValue').value;
   var tolerancja = document.getElementById('resTolerance').value;
+  var mnoznik = document.getElementById('mnoznik').value;
+  var liczba = String(wartoscRezystora);
 
-  pasek1.style.backgroundColor = "red";
-  pasek2.style.backgroundColor = "blue";
-  pasek3.style.backgroundColor = "grey";
-  pasek4.style.backgroundColor = "silver";
+  for(var i=0;i<9;i++)
+  {
+    if(liczba.substr(0,1)==stripe123valuetab[i])
+    pasek1.style.backgroundColor = colortab[i+2];
+    if(liczba.substr(1,1)==stripe123valuetab[i])
+    pasek2.style.backgroundColor = colortab[i+2];
+    else if (liczba.substr(1,1)=='')
+    pasek2.style.backgroundColor = "black";
+    if(liczba.substr(2,2)==stripe123valuetab[i])
+    pasek3.style.backgroundColor = colortab[i+2];
+    else if (liczba.substr(2,2)=='')
+    pasek3.style.backgroundColor = "black";
+  }
 
 
+
+
+
+  //Petla odpowiedzialna za wartosc koloru paska nr 4
+  for(var i=0;i<12;i++)
+  {
+    if(mnoznik==stripe4valuetab[i])
+    pasek4.style.backgroundColor = colortab[i];
+  }
+
+
+
+  //Petla odpowiedzialna za wartosc koloru paska nr 5
   for(var i=0;i<8;i++){
     if(tolerancja==stripe5valuetab[i])
     pasek5.style.backgroundColor = colortab[i];
@@ -111,4 +141,6 @@ function liczRezystancje() {
 
   if(tolerancja!=0)
   document.getElementById('wynik2').innerHTML = ("Tolerancja: "+tolerancja+" %")
+
+}
 }
