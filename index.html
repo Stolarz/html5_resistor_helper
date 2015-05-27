@@ -32,8 +32,18 @@
       <p>&#937</p>
       <br />
       <p>Podaj tolerancję:</p>
-      <input id="resTolerance" type="text" />
-      <p>%</p>
+      <select name="tolerance" id="resTolerance">
+        <option>Brak</option>
+        <option value="0.05">0.05%</option>
+        <option value="0.1">0.1%</option>
+        <option value="0.25">0.25%</option>
+        <option value="0.5">0.5%</option>
+        <option value="1">1%</option>
+        <option value="2">2%</option>
+        <option value="5">5%</option>
+        <option value="10">10%</option>
+        <option value="20">20%</option>
+      </select>
 
       <button id="liczBtn" onclick="liczRezystancje()">Oblicz</button>
       <div id="paski">
