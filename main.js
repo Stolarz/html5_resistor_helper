@@ -83,6 +83,8 @@ function colorValue(stripe) {
 }
 
 function liczRezystancje() {
+  var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey'];
+  var stripe5valuetab = ['5','10','1','2','0.5','0.25','0.1','0.05'];
   var pasek1 = document.getElementById('pasek21');
   var pasek2 = document.getElementById('pasek22');
   var pasek3 = document.getElementById('pasek23');
@@ -96,8 +98,17 @@ function liczRezystancje() {
   pasek2.style.backgroundColor = "blue";
   pasek3.style.backgroundColor = "grey";
   pasek4.style.backgroundColor = "silver";
-  pasek5.style.backgroundColor = "gold";
 
-  if(tolerancja!="Brak")
+
+  for(var i=0;i<8;i++){
+    if(tolerancja==stripe5valuetab[i])
+    pasek5.style.backgroundColor = colortab[i];
+    else if(tolerancja==0)
+    pasek5.style.backgroundColor = "orange";
+    else if(tolerancja==20)
+    pasek.style.backgroundColor = "transparent";
+  }
+
+  if(tolerancja!=0)
   document.getElementById('wynik2').innerHTML = ("Tolerancja: "+tolerancja+" %")
 }
