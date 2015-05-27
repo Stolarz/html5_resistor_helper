@@ -45,72 +45,29 @@ else if(pasek.style.backgroundColor=="gold")
 }
 
 function colorValue(stripe) {
-  if(stripe.style.backgroundColor=="black" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","0");
-  else if (stripe.style.backgroundColor=="rgb(136, 0, 0)" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","1");
-  else if (stripe.style.backgroundColor=="red" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","2");
-  else if(stripe.style.backgroundColor=="orange" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","3");
-  else if(stripe.style.backgroundColor=="yellow" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","4");
-  else if(stripe.style.backgroundColor=="green" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","5");
-  else if(stripe.style.backgroundColor=="blue" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","6");
-  else if(stripe.style.backgroundColor=="pink" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","7");
-  else if(stripe.style.backgroundColor=="grey" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","8");
-  else if(stripe.style.backgroundColor=="white" && stripe.id!="pasek4" && stripe.id!="pasek5")
-  stripe.setAttribute("data-value","9");
+  var colortab = ['gold','silver','black','rgb(136, 0, 0)','red','orange','yellow','green','blue','pink','grey','white'];
 
-  if(stripe.style.backgroundColor=="black" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","1");
-  else if(stripe.style.backgroundColor=="rgb(136, 0, 0)" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","10");
-  else if (stripe.style.backgroundColor=="red" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","100");
-  else if(stripe.style.backgroundColor=="orange" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","1000");
-  else if(stripe.style.backgroundColor=="yellow" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","10000");
-  else if(stripe.style.backgroundColor=="green" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","100000");
-  else if(stripe.style.backgroundColor=="blue" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","1000000");
-  else if(stripe.style.backgroundColor=="pink" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","10000000");
-  else if(stripe.style.backgroundColor=="silver" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","0.1");
-  else if(stripe.style.backgroundColor=="gold" && stripe.id=="pasek4")
-  stripe.setAttribute("data-value","0.01");
+//Ustawianie wartosci paskow od 1 do 3 na podstwaie koloru
+  var stripe123valuetab = ['0','1','2','3','4','5','6','7','8','9'];
+  for (var i = 0; i < 10; i++) {
+    if(stripe.style.backgroundColor==colortab[i+2] && stripe.id!="pasek4" && stripe.id!="pasek5")
+    stripe.setAttribute("data-value",stripe123valuetab[i]);
+  }
+
+//Ustawianie wartosci paska nr 4 na podstawie koloru
+  var stripe4valuetab=['0.01','0.1','1','10','100','1000','10000','100000','1000000','10000000'];
+  for(var i=0;i<10;i++){
+    if(stripe.style.backgroundColor==colortab[i] && stripe.id=="pasek4")
+    stripe.setAttribute("data-value",stripe4valuetab[i]);
+  }
 
 
-  if(stripe.style.backgroundColor=="black" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.2");
-  else if(stripe.style.backgroundColor=="rgb(136, 0, 0)" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.1");
-  else if (stripe.style.backgroundColor=="red" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.2");
-  else if(stripe.style.backgroundColor=="orange" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.3");
-  else if(stripe.style.backgroundColor=="yellow" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.001");
-  else if(stripe.style.backgroundColor=="green" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.005");
-  else if(stripe.style.backgroundColor=="blue" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.0025");
-  else if(stripe.style.backgroundColor=="pink" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.001");
-  else if(stripe.style.backgroundColor=="grey" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.0001");
-  else if(stripe.style.backgroundColor=="silver" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.1");
-  else if(stripe.style.backgroundColor=="gold" && stripe.id=="pasek5")
-  stripe.setAttribute("data-value","0.05");
-
+  //Ustawianie wartosci paska nr 5 na podstawie koloru
+  var stripe5valuetab = ['0.05','0.1','0.2','0.1','0.2','0.3','0.001','0.005','0.0025','0.001','0.0001'];
+  for (var i = 0; i < 11; i++){
+    if(stripe.style.backgroundColor==colortab[i] && stripe.id=="pasek5")
+    stripe.setAttribute("data-value",stripe5valuetab[i]);
+  }
 
   var pasek1Wynik = parseFloat(pasek1.getAttribute("data-value"));
   var pasek2Wynik = parseFloat(pasek2.getAttribute("data-value"));
