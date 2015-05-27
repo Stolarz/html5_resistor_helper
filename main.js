@@ -1,3 +1,17 @@
+/* ----------- Nawigacja --------- */
+function ContShow(btnName) {
+  document.getElementById(btnName).className = "";
+  document.getElementById('backBtn').className = "";
+  document.getElementById('startMenu').className = "hidden";
+}
+
+function getBack() {
+  document.getElementById('pasekCont').className = "hidden";
+  document.getElementById('licznikCont').className = "hidden";
+  document.getElementById('backBtn').className = "hidden";
+  document.getElementById('startMenu').className = "";
+}
+
 var wynik=0;
 function changeColor(pasek) {
 if(pasek.style.backgroundColor =="black")
@@ -109,4 +123,21 @@ function colorValue(stripe) {
   wynik = (pasek1Wynik + pasek2Wynik*10 + pasek3Wynik*100);
   console.log(wynik);
   document.getElementById('wynik').innerHTML = (wynik + " &#937"+"<p>Tolerancja: "+ tolerancja*100 +" %</p>");
+}
+
+function liczRezystancje() {
+  var pasek1 = document.getElementById('pasek21');
+  var pasek2 = document.getElementById('pasek22');
+  var pasek3 = document.getElementById('pasek23');
+  var pasek4 = document.getElementById('pasek24');
+  var pasek5 = document.getElementById('pasek25');
+
+  var wartoscRezystora = document.getElementById('resValue').value;
+  var tolerancja = document.getElementById('resTolerance').value;
+
+  pasek1.style.backgroundColor = "red";
+  pasek2.style.backgroundColor = "blue";
+  pasek3.style.backgroundColor = "grey";
+  pasek4.style.backgroundColor = "silver";
+  pasek5.style.backgroundColor = "gold";
 }

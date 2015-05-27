@@ -1,10 +1,23 @@
-<html>
+<html lang="pl">
   <head>
-<link rel="stylesheet" href="main.css">
-<script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
-    <div id="pasekCont">
+    <button id="backBtn" class="hidden" onclick="getBack()">Powrót</button>
+    <nav id="startMenu">
+      <ul>
+        <li>
+          <button class="startBtn" onclick="ContShow('pasekCont')">Rezystor -> wartość</button>
+        </li>
+        <li>
+          <button class="startBtn" onclick="ContShow('licznikCont')">Wartość -> rezystor</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="pasekCont" class="hidden">
       <div class="pasek" id="pasek1" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
       <div class="pasek" id="pasek2" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
       <div class="pasek" id="pasek3" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
@@ -13,5 +26,23 @@
       <div id="wynik"></div>
     </div>
 
+    <div id="licznikCont" class="hidden">
+      <p>Podaj wartość rezystora:</p>
+      <input id="resValue" type="text" />
+      <p>&#937</p>
+      <br />
+      <p>Podaj tolerancję:</p>
+      <input id="resTolerance" type="text" />
+      <p>%</p>
+
+      <button id="liczBtn" onclick="liczRezystancje()">Oblicz</button>
+      <div id="paski">
+        <div class="pasek" id="pasek21"></div>
+        <div class="pasek" id="pasek22"></div>
+        <div class="pasek" id="pasek23"></div>
+        <div class="pasek" id="pasek24"></div>
+        <div class="pasek" id="pasek25"></div>
+      </div>
+    </div>
   </body>
 </html>

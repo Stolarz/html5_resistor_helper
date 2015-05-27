@@ -1,3 +1,52 @@
+.hidden {
+  display: none;
+}
+
+ul, p {
+  padding: 0;
+  margin: 0;
+}
+
+/* ------- Nawigacja ---------- */
+#startMenu ul {
+  list-style-type: none;
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+#startMenu ul li {
+  display: inline-block;
+}
+
+.startBtn {
+  min-width: 170px;
+  padding: 20px 0;
+}
+
+.startBtn:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#backBtn {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* --------- Pasek -> Wartosc ---------- */
+#pasekCont, #licznikCont{
+  background-color: #F5F5DC;
+  margin: auto;
+  width: 500px;
+  min-height: 300px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 .pasek{
   width: 20px;
   height: 100px;
@@ -5,15 +54,34 @@
   margin: 0 10px;
 }
 
-.pasek:hover{
+#pasekCont .pasek:hover{
   cursor: pointer;
 }
-#pasekCont{
-  background-color: #F5F5DC;
-  margin: auto;
+
+/* --------- Wartosc -> Pasek ---------- */
+#licznikCont {
+  text-align: left;
+  padding-left: 20px;
+}
+
+#licznikCont p {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#licznikCont input {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#liczBtn {
+  display: block;
+  margin-top: 10px;
+}
+
+#paski {
+  padding-top: 50px;
   width: 300px;
+  margin: auto;
   text-align: center;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
