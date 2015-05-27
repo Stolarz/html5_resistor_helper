@@ -97,4 +97,7 @@ function liczRezystancje() {
   pasek3.style.backgroundColor = "grey";
   pasek4.style.backgroundColor = "silver";
   pasek5.style.backgroundColor = "gold";
+
+  if(tolerancja!="Brak")
+  document.getElementById('wynik2').innerHTML = ("Tolerancja: "+tolerancja+" %")
 }
