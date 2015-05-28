@@ -104,11 +104,11 @@ function liczRezystancje() {
     if(liczba.substr(1,1)==stripe123valuetab[i])
     pasek2.style.backgroundColor = colortab[i+2];
     else if (liczba.substr(1,1)=='')
-    pasek2.style.backgroundColor = "black";
+    pasek2.style.backgroundColor = "transparent";
     if(liczba.substr(2,2)==stripe123valuetab[i])
     pasek3.style.backgroundColor = colortab[i+2];
     else if (liczba.substr(2,2)=='')
-    pasek3.style.backgroundColor = "black";
+    pasek3.style.backgroundColor = "transparent";
   }
 
   //Petla odpowiedzialna za wartosc koloru paska nr 4
