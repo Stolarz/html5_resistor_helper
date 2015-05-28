@@ -61,7 +61,6 @@ function colorValue(stripe) {
     stripe.setAttribute("data-value",stripe4valuetab[i]);
   }
 
-
   //Ustawianie wartosci paska nr 5 na podstawie koloru
   var stripe5valuetab = ['0.05','0.1','0.2','0.1','0.2','0.3','0.001','0.005','0.0025','0.001','0.0001'];
   for (var i = 0; i < 11; i++){
