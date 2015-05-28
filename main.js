@@ -40,7 +40,6 @@ else if(pasek.style.backgroundColor=="silver")
   pasek.style.backgroundColor="gold";
 else if(pasek.style.backgroundColor=="gold")
   pasek.style.backgroundColor="black";
-
 }
 
 function colorValue(stripe) {
@@ -82,7 +81,7 @@ function colorValue(stripe) {
 
 function liczRezystancje() {
   if(document.getElementById('resValue').value>999)
-  alert('Maxymalna liczba wynosi 999. Wprowadź poprawki');
+  alert('Maksymalna liczba wynosi 999. Wprowadź poprawki');
   else {
   var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey','white','black','orange','yellow'];
   var stripe5valuetab = ['5','10','1','2','0.5','0.25','0.1','0.05'];
