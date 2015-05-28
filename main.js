@@ -130,8 +130,8 @@ function liczRezystancje() {
     pasek.style.backgroundColor = "transparent";
   }
 
-  if(tolerancja!=0)
-  document.getElementById('wynik2').innerHTML = ("Tolerancja: "+tolerancja+" %")
+  var wartosc = wartoscRezystora*mnoznik;
+  document.getElementById('wynik2').innerHTML = ("Rezystancja: "+wartosc+" &#937<br />Tolerancja: "+tolerancja+" %");
 
 }
 }
