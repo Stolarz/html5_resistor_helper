@@ -85,7 +85,6 @@ function liczRezystancje() {
   if(document.getElementById('resValue').value>999)
   alert('Maxymalna liczba wynosi 999. Wprowadź poprawki');
   else {
-
   var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey','white','black','orange','yellow'];
   var stripe5valuetab = ['5','10','1','2','0.5','0.25','0.1','0.05'];
   var stripe4valuetab = ['0.1','0.01','10','100','100000','1000000','10000000','','','1','1000','10000'];
