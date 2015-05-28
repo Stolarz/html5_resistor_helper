@@ -113,10 +113,6 @@ function liczRezystancje() {
     pasek3.style.backgroundColor = "black";
   }
 
-
-
-
-
   //Petla odpowiedzialna za wartosc koloru paska nr 4
   for(var i=0;i<12;i++)
   {
