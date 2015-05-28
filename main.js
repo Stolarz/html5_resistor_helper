@@ -28,13 +28,11 @@ else if(pasek.style.backgroundColor=="green")
   pasek.style.backgroundColor="blue";
 else if(pasek.style.backgroundColor=="blue")
   pasek.style.backgroundColor="pink";
-else if(pasek.style.backgroundColor=="pink" && (pasek.id=="pasek1" || pasek.id=="pasek2" || pasek.id=="pasek3" || pasek.id=="pasek5"))
+else if(pasek.style.backgroundColor=="pink" && (pasek.id=="pasek1" || pasek.id=="pasek2" || pasek.id=="pasek3"))
   pasek.style.backgroundColor="grey";
 else if(pasek.style.backgroundColor=="grey" && pasek.id!="pasek5")
   pasek.style.backgroundColor="white";
-else if(pasek.style.backgroundColor=="grey" && pasek.id=="pasek5")
-  pasek.style.backgroundColor=="silver";
-else if(pasek.style.backgroundColor=="pink" && pasek.id=="pasek4")
+else if(pasek.style.backgroundColor=="pink" && (pasek.id=="pasek4" || pasek.id=="pasek5"))
   pasek.style.backgroundColor="silver";
 else if(pasek.style.backgroundColor=="white")
   pasek.style.backgroundColor="black";
@@ -42,6 +40,7 @@ else if(pasek.style.backgroundColor=="silver")
   pasek.style.backgroundColor="gold";
 else if(pasek.style.backgroundColor=="gold")
   pasek.style.backgroundColor="black";
+
 }
 
 function colorValue(stripe) {
@@ -68,15 +67,15 @@ function colorValue(stripe) {
     stripe.setAttribute("data-value",stripe5valuetab[i]);
   }
 
-  var pasek1Wynik = parseFloat(pasek1.getAttribute("data-value"));
-  var pasek2Wynik = parseFloat(pasek2.getAttribute("data-value"));
-  var pasek3Wynik = parseFloat(pasek3.getAttribute("data-value"));
-  var pasek4Wynik = parseFloat(pasek4.getAttribute("data-value"));
-  var tolerancja = parseFloat(pasek5.getAttribute("data-value"));
+  var pasek1Wynik = parseFloat(document.getElementById("pasek1").getAttribute("data-value"));
+  var pasek2Wynik = parseFloat(document.getElementById("pasek2").getAttribute("data-value"));
+  var pasek3Wynik = parseFloat(document.getElementById("pasek3").getAttribute("data-value"));
+  var pasek4Wynik = parseFloat(document.getElementById("pasek4").getAttribute("data-value"));
+  var tolerancja = parseFloat(document.getElementById("pasek5").getAttribute("data-value"));
   if(pasek4Wynik!=0)
-  wynik = (pasek1Wynik + pasek2Wynik*10 + pasek3Wynik*100)*pasek4Wynik;
+  wynik = (pasek1Wynik*100 + pasek2Wynik*10 + pasek3Wynik)*pasek4Wynik;
   else
-  wynik = (pasek1Wynik + pasek2Wynik*10 + pasek3Wynik*100);
+  wynik = (pasek1Wynik*100 + pasek2Wynik*10 + pasek3Wynik);
   console.log(wynik);
   document.getElementById('wynik').innerHTML = (wynik + " &#937"+"<p>Tolerancja: "+ tolerancja*100 +" %</p>");
 }
