@@ -94,7 +94,6 @@ function liczRezystancje() {
   var pasek3 = document.getElementById('pasek23');
   var pasek4 = document.getElementById('pasek24');
   var pasek5 = document.getElementById('pasek25');
-
   var wartoscRezystora = document.getElementById('resValue').value;
   var tolerancja = document.getElementById('resTolerance').value;
   var mnoznik = document.getElementById('mnoznik').value;
