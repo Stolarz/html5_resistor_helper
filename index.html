@@ -11,6 +11,9 @@
         <li>
           <button class="startBtn" onclick="ContShow('pasekCont')">Rezystor -> wartość</button>
         </li>
+        <li style="margin: 0 20px;">
+          LUB
+        </li>
         <li>
           <button class="startBtn" onclick="ContShow('licznikCont')">Wartość -> rezystor</button>
         </li>
@@ -18,51 +21,63 @@
     </nav>
 
     <div id="pasekCont" class="hidden">
-      <div class="pasek" id="pasek1" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
-      <div class="pasek" id="pasek2" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
-      <div class="pasek" id="pasek3" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
-      <div class="pasek" id="pasek4" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
-      <div class="pasek" id="pasek5" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      <h1>Proszę wybrać kolory pasków, klikając na nie:</h1>
+      <div class="rezystorImg">
+        <div class="pasek" id="pasek1" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+        <div class="pasek" id="pasek2" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+        <div class="pasek" id="pasek3" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+        <div class="pasek" id="pasek4" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+        <div class="pasek" id="pasek5" data-value="0" style="background-color: black;" onclick="changeColor(this); colorValue(this);"></div>
+      </div>
       <div id="wynik"></div>
     </div>
 
     <div id="licznikCont" class="hidden">
-      <p>Podaj wartość rezystora i mnożnik:</p>
-      <input id="resValue" type="number" min='1' max='999' maxlength='3' value='1'/>
-      <select id="mnoznik">
-        <option value="1">1&#937</option>
-        <option value="10">10&#937</option>
-        <option value="100">100&#937</option>
-        <option value="1000">1K&#937</option>
-        <option value="10000">10K&#937</option>
-        <option value="100000">100K&#937</option>
-        <option value="1000000">1M&#937</option>
-        <option value="10000000">10M&#937</option>
-        <option value="0.1">0.1&#937</option>
-        <option value="0.01">0.01&#937</option>
-      </select>
-      <br />
-      <p>Podaj tolerancję:</p>
-      <select name="tolerance" id="resTolerance">
-        <option value="0">Brak</option>
-        <option value="0.05">0.05%</option>
-        <option value="0.1">0.1%</option>
-        <option value="0.25">0.25%</option>
-        <option value="0.5">0.5%</option>
-        <option value="1">1%</option>
-        <option value="2">2%</option>
-        <option value="5">5%</option>
-        <option value="10">10%</option>
-        <option value="20">20%</option>
-      </select>
+      <div id="info2">
+        <p>Podaj wartość rezystora:</p>
+        <input id="resValue" class="wartRez" type="number" min='1' max='999' maxlength='3' value='1'/>
 
-      <button id="liczBtn" onclick="liczRezystancje()">Oblicz</button>
-      <div id="paski">
-        <div class="pasek" id="pasek21"></div>
-        <div class="pasek" id="pasek22"></div>
-        <div class="pasek" id="pasek23"></div>
-        <div class="pasek" id="pasek24"></div>
-        <div class="pasek" id="pasek25"></div>
+        <br />
+        <p>Podaj mnożnik:</p>
+        <select id="mnoznik">
+          <option value="1">1&#937</option>
+          <option value="10">10&#937</option>
+          <option value="100">100&#937</option>
+          <option value="1000">1K&#937</option>
+          <option value="10000">10K&#937</option>
+          <option value="100000">100K&#937</option>
+          <option value="1000000">1M&#937</option>
+          <option value="10000000">10M&#937</option>
+          <option value="0.1">0.1&#937</option>
+          <option value="0.01">0.01&#937</option>
+        </select>
+        <br />
+
+        <p>Podaj tolerancję:</p>
+        <select name="tolerance" id="resTolerance">
+          <option value="0">Brak</option>
+          <option value="0.05">0.05%</option>
+          <option value="0.1">0.1%</option>
+          <option value="0.25">0.25%</option>
+          <option value="0.5">0.5%</option>
+          <option value="1">1%</option>
+          <option value="2">2%</option>
+          <option value="5">5%</option>
+          <option value="10">10%</option>
+          <option value="20">20%</option>
+        </select>
+
+        <button id="liczBtn" onclick="liczRezystancje()">Oblicz</button>
+      </div>
+
+      <div class="rezystor">
+        <div class="rezystorImg">
+          <div class="pasek" id="pasek21"></div>
+          <div class="pasek" id="pasek22"></div>
+          <div class="pasek" id="pasek23"></div>
+          <div class="pasek" id="pasek24"></div>
+          <div class="pasek" id="pasek25"></div>
+        </div>
         <div id="wynik2"></div>
       </div>
     </div>

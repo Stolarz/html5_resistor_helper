@@ -15,10 +15,7 @@ function ContShow(btnName) {
 }
 
 function getBack() {
-  document.getElementById('pasekCont').className = "hidden";
-  document.getElementById('licznikCont').className = "hidden";
-  document.getElementById('backBtn').className = "hidden";
-  document.getElementById('startMenu').className = "";
+  location.reload(true);
 }
 
 var wynik=0;
@@ -116,7 +113,7 @@ function colorValue(stripe) {
   typszeregu = "-";
   dekada = "";
   }
-  document.getElementById('wynik').innerHTML = (wynik + " &#937<br />"+"Tolerancja: "+ tolerancja +" %<br />Sugerowany Typ Szeregu: "+typszeregu+" "+dekada);
+  document.getElementById('wynik').innerHTML = ("Wartość rezystora: " + wynik + " &#937<br />"+"Tolerancja: "+ tolerancja +" %<br />Sugerowany typ szeregu: "+typszeregu+" "+dekada);
 }
 
 

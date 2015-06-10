@@ -2,12 +2,46 @@
   display: none;
 }
 
+* {
+  font-family: Calibri;
+  font-size: 20px;
+}
+
 ul, p {
   padding: 0;
   margin: 0;
 }
 
+.rezystorImg {
+  background-image: url(image.png);
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 300px;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  margin: auto;
+}
+
+.pasek{
+  width: 50px;
+  height: 198px;
+  display: inline-block;
+  margin: 40px 25px;
+  transition: background-color 0.5s;
+}
+
+#pasek1, #pasek21, #pasek5, #pasek25{
+  height: 217px;
+  margin-bottom: 29px;
+  border-radius: 5px;
+}
+
+
 /* ------- Nawigacja ---------- */
+#startMenu {
+  margin-top: 200px;
+}
+
 #startMenu ul {
   list-style-type: none;
   width: 500px;
@@ -20,7 +54,7 @@ ul, p {
 }
 
 .startBtn {
-  min-width: 170px;
+  min-width: 190px;
   padding: 20px 0;
 }
 
@@ -37,33 +71,19 @@ ul, p {
 
 /* --------- Pasek -> Wartosc ---------- */
 #pasekCont, #licznikCont{
-  background-color: #F5F5DC;
   margin: auto;
-  width: 500px;
-  min-height: 300px;
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
 }
 
-.pasek{
-  width: 20px;
-  height: 100px;
-  display: inline-block;
-  margin: 0 10px;
-}
 
 #pasekCont .pasek:hover{
   cursor: pointer;
 }
 
 /* --------- Wartosc -> Pasek ---------- */
-#licznikCont {
-  text-align: left;
-  padding-left: 20px;
-}
-
 #licznikCont p {
   display: inline-block;
   margin-top: 10px;
@@ -71,17 +91,19 @@ ul, p {
 
 #licznikCont input {
   display: inline-block;
-  margin-left: 20px;
+  margin-top: 10px;
 }
 
 #liczBtn {
   display: block;
-  margin-top: 10px;
+  margin: 20px auto;
 }
 
-#paski {
-  padding-top: 50px;
-  width: 300px;
+#info2 {
+  width: 320px;
   margin: auto;
-  text-align: center;
+}
+
+.wartRez {
+  width: 70px;
 }
