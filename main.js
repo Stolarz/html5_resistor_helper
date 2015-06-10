@@ -69,7 +69,7 @@ function colorValue(stripe) {
   }
 
   //Ustawianie wartosci paska nr 5 na podstawie koloru
-  var stripe5valuetab = ['0.05','0.1','0.2','0.1','0.2','0.3','0.001','0.005','0.0025','0.001','0.0001'];
+  var stripe5valuetab = ['5','10','20','1','2','0','0','0.5','0.25','0.10','0.05',''];
   for (var i = 0; i < 11; i++){
     if(stripe.style.backgroundColor==colortab[i] && stripe.id=="pasek5")
     stripe.setAttribute("data-value",stripe5valuetab[i]);
@@ -84,33 +84,31 @@ function colorValue(stripe) {
   wynik = (pasek1Wynik*100 + pasek2Wynik*10 + pasek3Wynik)*pasek4Wynik;
   else
   wynik = (pasek1Wynik*100 + pasek2Wynik*10 + pasek3Wynik);
-  console.log(wynik);
 
   var wartoscpodszereg = wynik.toString().substring(0, 3);
   var dekada;
-  wartoscpodszereg = wartoscpodszereg.parseInt();
 
-  if(tolerancja*100 == 20){
+  if(tolerancja == 20){
   typszeregu = szereg[0];
   dekada = findClose(e6,wartoscpodszereg);
   }
-  else if(tolerancja*100 == 10){
+  else if(tolerancja == 10){
   typszeregu = szereg[1];
   dekada = findClose(e12,wartoscpodszereg);
   }
-  else if (tolerancja*100 == 5){
+  else if (tolerancja == 5){
   typszeregu = szereg[2];
   dekada = findClose(e24,wartoscpodszereg);
   }
-  else if(tolerancja*100 == 2){
+  else if(tolerancja == 2){
   typszeregu = szereg[3];
   dekada = findClose(e48,wartoscpodszereg);
   }
-  else if(tolerancja*100 == 1){
+  else if(tolerancja == 1){
   typszeregu = szereg[4];
   dekada = findClose(e96,wartoscpodszereg);
   }
-  else if(tolerancja*100 == 0.5){
+  else if(tolerancja == 0.5){
   typszeregu = szereg[5];
   dekada = findClose(e192,wartoscpodszereg);
   }
@@ -118,7 +116,7 @@ function colorValue(stripe) {
   typszeregu = "-";
   dekada = "";
   }
-  document.getElementById('wynik').innerHTML = (wynik + " &#937<br />"+"Tolerancja: "+ tolerancja*100 +" %<br />Sugerowany Typ Szeregu: "+typszeregu+" "+dekada);
+  document.getElementById('wynik').innerHTML = (wynik + " &#937<br />"+"Tolerancja: "+ tolerancja +" %<br />Sugerowany Typ Szeregu: "+typszeregu+" "+dekada);
 }
 
 
@@ -129,15 +127,12 @@ function colorValue(stripe) {
           return i[0];
 
       for (var i=1; i<arr.length; i++) {
-          // As soon as a number bigger than target is found, return the previous or current
-          // number depending on which has smaller difference to the target.
           if (arr[i] > target) {
               var p = arr[i-1];
               var c = arr[i]
               return Math.abs( p-target ) < Math.abs( c-target ) ? p : c;
           }
       }
-      // No number in array is bigger so return the last.
       return arr[arr.length-1];
   }
 
@@ -149,8 +144,6 @@ function liczRezystancje() {
   else {
   var colortab = ['gold','silver','rgb(136, 0, 0)','red','green','blue','pink','grey','white','black','orange','yellow'];
   var stripe5valuetab = ['5','10','1','2','0.5','0.25','0.1','0.05'];
-
-
   var stripe4valuetab = ['0.1','0.01','10','100','100000','1000000','10000000','','','1','1000','10000'];
   var stripe123valuetab = ['1','2','5','6','7','8','9','0','3','4']
   var pasek1 = document.getElementById('pasek21');
