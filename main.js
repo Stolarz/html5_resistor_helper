@@ -188,33 +188,33 @@ function liczRezystancje() {
   }
   var dekada;
   var wartosc = wartoscRezystora*mnoznik;
-  
+  var wartoscpodszereg = wartosc.toString().substring(0, 3);
 
 
 
     if(tolerancja == 20){
     typszeregu = szereg[0];
-    dekada = findClose(e6,wartosc);
+    dekada = findClose(e6,wartoscpodszereg);
     }
     else if(tolerancja == 10){
     typszeregu = szereg[1];
-    dekada = findClose(e12,wartosc);
+    dekada = findClose(e12,wartoscpodszereg);
     }
     else if (tolerancja == 5){
     typszeregu = szereg[2];
-    dekada = findClose(e24,wartosc);
+    dekada = findClose(e24,wartoscpodszereg);
     }
     else if(tolerancja == 2){
     typszeregu = szereg[3];
-    dekada = findClose(e48,wartosc);
+    dekada = findClose(e48,wartoscpodszereg);
     }
     else if(tolerancja == 1){
     typszeregu = szereg[4];
-    dekada = findClose(e96,wartosc);
+    dekada = findClose(e96,wartoscpodszereg);
     }
     else if(tolerancja == 0.5){
     typszeregu = szereg[5];
-    dekada = findClose(e192,wartosc);
+    dekada = findClose(e192,wartoscpodszereg);
     }
     else{
     typszeregu = "-";
